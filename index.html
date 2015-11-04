@@ -15,51 +15,125 @@
 
   <link rel="stylesheet" href="css/app.css">
 
-  <script>
-    var w = $(document).width();
-    if (w <= 699) {
-      //document.location = "mobile.html";
-    }
-  </script>
+  
 	
 </head>
 
 <body class="page" ng-app="MyApp">
  
 	<header>
-    <div class="header-image-wrap" role="banner">
-      <img src="img/header-collage.jpg"  alt="">
+    <div class="header-desktop" role="banner">
+      <div class="logo-container">
+        <div class="header-logo" ng-include="'img/EIA-logo.svg'"></div>
+        
+        <div class="header-contact-desktop">
+          <h2>Tel.  281-438-2787</h2>
+        </div>
+      </div>
     </div>
   </header>
   
 
+  <div class="top-bar-wrapper">
   <div class="center-margin">
       <div id="top-bar-container" ng-controller="NavCtrl" ng-show="showNav==true">
           <nav class="top-bar" data-topbar role="navigation" >
             <section class="top-bar-section">
              <ul class="left">
                 <li ng-class="{ active: isCurrentPath('/home') }"><a ui-sref="home">Home</a></li>
-                <li ng-class="{ active: isCurrentPath('/about') }"><a ui-sref="about">About</a></li>
-                <li ng-class="{ active: isCurrentPath('/tables') || isCurrentPath('/other')}" class="has-dropdown">
-                  <a ui-sref="#">Products</a>
+                <li ng-class="{ active: isCurrentPath('/tables') || isCurrentPath('/mugs')}" class="has-dropdown">
+                  <a ui-sref="#">Store</a>
                   <ul class="dropdown">
-                    <li><a ui-sref="tables">Custom Engraved Tables</a></li>
-                    <li><a ui-sref="other">Other</a></li>
+                    <li><a ui-sref="tables">Hardwood Tables</a></li>
+                    <li><a ui-sref="sticks">Whooping Sticks</a></li>
+                    <li><a ui-sref="mugs">Travel Tumblers</a></li>
+                    <li><a ui-sref="boards">Cutting Boards</a></li>
+                    <li><a ui-sref="pins">Rolling Pins</a></li>
                   </ul>
                 </li>
+                <li ng-class="{ active: isCurrentPath('/engraving') || isCurrentPath('/other')}" class="has-dropdown">
+                  <a ui-sref="#">Services</a>
+                  <ul class="dropdown">
+                    <li><a ui-sref="wood">Woodworking</a></li>
+                    <li><a ui-sref="laser">Laser Engraving/Cutting</a></li>
+                    <li><a ui-sref="mugs">Personalize Your Yeti!</a></li>
+                    <li><a ui-sref="print">Photo Production Printing</a></li>
+                  </ul>
+                </li>
+                <li ng-class="{ active: isCurrentPath('/contact') }"><a ui-sref="contact">Contact</a></li>
               </ul>
             </section>
           </nav>
       </div>
-      <div ui-view class="content-container"</div>
+    </div>
   </div>
-      <footer>
-      
-    </footer>
+  <div ui-view class="content-container">
+    <h1>Welcome to Evolution Industrial Arts.  We're glad you are here!</h1>
+    <h6>Evolution Industrial Arts is both a Custom Woodworking Shop and an Art Studio located in Stafford, Texas, part of the Greater Houston Metropolitan Area . We offer an eclectic array of off the shelf products, as well as a variety of custom woodworking, engraving and other services. Got something in mind? We can help! Contact us to talk about your custom project.</h6>
+    <div class="spacerMed"></div>
+    <div class="flex-space">
+        <div class="blocked-section">
+          <div>
+            <h4>Products</h4>
+           <ul>
+              <li><h6>Hardwood 'butcher block' style table tops</h6></li>
+              <li><h6>Travel Tumblers</h6></li>
+              <li><h6>Rolling Pins</h6></li>
+              <li><h6>Whooping Sticks</h6></li>
+              <li><h6>Cutting Boards</h6></li>
+            </ul>
+          </div>
+        </div>
+        <div class="blocked-section">
+          <div>
+            <h4>Services</h4>
+            <ul>
+              <li><h6>Custom Woodworking</h6></li>
+              <li><h6>Laser Etching/Engraving</h6></li>
+              <li><h6>Laser Cutting</h6></li>
+              <li><h6>Photo Production Printing</h6></li>
+              <li><h6>Thermofoil Surfacing</h6></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    
+    
+   <div class="spacerMed"></div>
+    <div class="flexcentered">
+      <div class="slick-container">
+        <slick dots=true infinite=true speed=500 autoplay=true fade=true mobile-first=true arrows=true pause-on-hover=true>
+          <div><img src="img/slick/table-txu.jpg" alt=""></div>
+          <div><img src="img/slick/fire-in-hole.jpg" alt=""></div>
+          <div><img src="img/slick/fire-in-hole-2.jpg" alt=""></div>
+          <div><img src="img/slick/table-arnold.jpg" alt=""></div>
+          <div><img src="img/slick/table-haa.jpg" alt=""></div>
+          <div><img src="img/slick/table-martin.jpg" alt=""></div>
+          <div><img src="img/slick/table-wine01.jpg" alt=""></div>
+          <div><img src="img/slick/du.jpg" alt=""></div>
+          <div><img src="img/slick/award-wall.jpg" alt=""></div>
+        </slick>
+      </div>
+    </div>
+
+    
+  </div>
+  <footer class="footer">
+       <div class="row">
+          <div class="small-12 columns">
+            <p class="slogan">Evolution Industrial Arts</p>
+            <p class="links">
+              <a ui-sref="home">Home</a>
+              <a ui-sref="store">Store</a>
+              <a ui-sref="services">Services</a>
+              <a ui-sref="contact">Contact</a>
+            </p>
+            <p class="copywrite">Copywrite© 2015</p>
+          </div>
+      </div>
+  </footer>
     
       
-	
-
   <!--Vendors not included in bundle.js file-->
   <script src="vendors/slick-carousel/slick/slick.js"></script>
    <!--Custom JS-->
@@ -68,19 +142,25 @@
   <!--Controlles-->
   <script src="js/controllers/nav.ctrl.js"></script>
   <script src="views/home/home.ctrl.js"></script>
+  <!--Controlles.Products-->
+  <script src="views/store/store.ctrl.js"></script>
+  <script src="views/store/tables/tables.ctrl.js"></script>
  
+   <!--Controllers.Services-->
+  <script src="views/services/services.ctrl.js"></script>
+  
  
   <!--Services-->
   
- 
-
   <!--Directives-->
   <script src="js/directives/hrule.dir.js"></script>
-
-
-  
-  
-
+  <script src="js/directives/imgWithCaption.dir.js"></script>
+  <script>
+    var w = $(document).width();
+    if (w <= 699) {
+      document.location = "mobile.html";
+    }
+  </script>
   <script>
     $(document).foundation();
   </script>

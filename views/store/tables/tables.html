@@ -1,0 +1,82 @@
+<div ng-controller="TableCtrl as Ctrl">
+	<h3>Hardwood Tables</h3>
+	<div class="flex-column">
+		<div>
+			<p>Welcome to our Hardwood Tables page.  We're glad you are here. Take a moment to browse our photo gallery of tables and see some of the products we have made for our customers. If you have an idea for a new table, we would love to hear about it and see how we can help.</p>
+			<p class="bold">Are you a commercial client in need of a large quantity order? We can supply restaurants, contractors, builders, schools, and cabinet shops with custom table tops for commercial use. Call for quantity discount - 281-438-2787.</p>
+			<h5>Engraved Table Tops</h5>
+			<div>
+				<ul class="small-block-grid-1 medium-block-grid-4">
+			        <li>
+			           <img src="views/store/tables/img/tbl001.jpg" alt="table">
+			        </li>
+			        <li>
+			            <img src="views/store/tables/img/tbl002.jpg" alt="table">
+			        </li>
+
+			        <li>
+			            <img src="views/store/tables/img/tbl003.jpg" alt="table">
+			        </li>
+
+			        <li>
+			            <img src="views/store/tables/img/tbl004.jpg" alt="table">
+			        </li>
+			    </ul>
+			</div>
+			<h5>Options</h5>
+			<div class="hrule"></div>
+			<p>Our solid hardwood table tops are hand made from 'Select & Better' grade hardwood lumber.  We use solid un-cut strips (no finger jointing little pieces) and assemble each block with a waterproof food safe adhesive.  You can order a table any way you like. Finished, un-finished, with edge round overs or profiles, square edge one side, etc.  We have many different species of hardwoods available, including Walnut, Cherry, Maple, Oak, Hickory, and Ash. We build edge grain (long strips) style blocks. From small cutting board sizes to large table top sizes. We can custom build almost any size up to 3″ thick.</p>
+			<h6 style="margin-top:10px;">Types of Wood</h6>
+			<p>Because all our tables are custom made we are happy to use any variety of wood available.  Some of the more species are: </p>
+			<table st-table="Ctrl.woodVarieties" class="table table-striped" style="min-width:100%;">
+				<thead>
+					<tr>
+						<th>Wood Varieties</th>
+						<th></th>
+						<th></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in Ctrl.woodVarieties">
+						<td><img src="{{row.img}}" alt=""></td>
+						<td>{{row.name}}</td>
+						<td>{{row.description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="spacerMed"></div>
+		<h6 style="margin-top:10px;">Engraving</h6>
+		<p>We offer a selection of engraved designs for you to choose from, or you can provide your own custom design or photo.  The steps required in preparing the artwork for engraving will vary with the image.  Call for a free consultation.</p>
+		<div class="spacerMed"></div>
+		<h6 style="margin-top:10px;">Pricing</h6>
+		<p>Prices begin at $395 for 28" round maple with "print-ready" artwork.  Does not include base.  All other options (artwork, size, wood, inlays etc.) are by custom quote only.  Dealer inquiries welcome.  Multi-table discounts available.</p>
+		<div class="spacerMed"></div>
+		<div>
+			<h5>Complete In-house Production</h5>
+			<ul class="small-block-grid-1 medium-block-grid-3">
+				<li>
+		            <img-with-caption imgsrc="views/store/tables/img/lumber.jpg" cap="A fresh delivery of raw lumber." title="Fig 1"></img-with-caption>
+		        </li>
+		        <li>
+		            <img-with-caption imgsrc="views/store/tables/img/stacked.jpg" cap="Cut and glued into table blanks." title="Fig 2"></img-with-caption>
+		        </li>
+		        <li>
+		            <img-with-caption imgsrc="views/store/tables/img/sand.jpg" cap="Initial belt sanding." title="Fig 3"></img-with-caption>
+		        </li>
+
+		        <li>
+		            <img-with-caption imgsrc="views/store/tables/img/shape.jpg" cap="Cut to shape on CNC." title="Fig 4"></img-with-caption>
+		        </li>
+
+		        <li>
+		           <img-with-caption imgsrc="views/store/tables/img/engraver.jpg" cap="Engraver." title="Fig 5"></img-with-caption>
+		        </li>
+		        <li>
+		           <img-with-caption imgsrc="views/store/tables/img/finish.jpg" cap="Finish." title="Fig 6"></img-with-caption>
+		        </li>
+		    </ul>
+		</div>	
+	</div>
+</div>
